@@ -9,6 +9,7 @@ using System.Linq;
 using System.Management.Automation.Language;
 using System.Management.Automation.Runspaces;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 using Microsoft.CodeAnalysis;
@@ -19,6 +20,8 @@ using Microsoft.DotNet.Interactive.PowerShell.Host;
 using Microsoft.DotNet.Interactive.ValueSharing;
 using Microsoft.PowerShell;
 using Microsoft.PowerShell.Commands;
+
+[assembly: InternalsVisibleTo("Notebook.Kernel")]
 
 namespace Microsoft.DotNet.Interactive.PowerShell;
 

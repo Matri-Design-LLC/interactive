@@ -1,5 +1,8 @@
 <Project>
-
+  <PropertyGroup>
+    <DisableArcade>1</DisableArcade>
+  </PropertyGroup>
+  
   <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" Condition="'$(DisableArcade)' != '1'" />
   <Import Project="eng\targets\Settings.props" />
   <Import Project="eng\targets\NuGet.targets" />
@@ -17,7 +20,7 @@
   <PropertyGroup>
     <MicrosoftNETTestSdkVersion>17.4.0</MicrosoftNETTestSdkVersion>
     <NewtonsoftJsonVersion>13.0.3</NewtonsoftJsonVersion>
-    <MicrosoftCodeAnalysisCommonVersion>4.8.0</MicrosoftCodeAnalysisCommonVersion>
+    <MicrosoftCodeAnalysisCommonVersion>4.6.0</MicrosoftCodeAnalysisCommonVersion>
     <SystemDrawingCommonVersion>8.0.0</SystemDrawingCommonVersion>
     <SystemReactiveVersion>6.0.0</SystemReactiveVersion>
     <SystemSecurityCryptographyXmlVersion>8.0.0</SystemSecurityCryptographyXmlVersion>

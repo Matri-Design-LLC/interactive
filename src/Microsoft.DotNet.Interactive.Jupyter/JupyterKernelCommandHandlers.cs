@@ -173,7 +173,7 @@ internal partial class JupyterKernel
                                         await HandleExecuteReplyMessageAsync(m, command, context);
                                     }
                                 })
-                                .TakeUntil(m => m.MessageType == JupyterMessageContentTypes.Error || (messagesProcessed && results is not null));
+                                .TakeWhile(m => m.MessageType == JupyterMessageContentTypes.Error || (messagesProcessed && results is not null));
         // run until kernel idle or until execution is done
 
         await Sender.SendAsync(executeRequest);

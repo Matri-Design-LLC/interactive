@@ -16,7 +16,7 @@ public static class MessageObservableExtensions
 
     public static IObservable<Protocol.Message> TakeUntilMessageType(this IObservable<Protocol.Message> observable, params string[] messageTypes)
     {
-        return observable.TakeUntil(m => messageTypes.Contains(m.MessageType));
+        return observable.TakeWhile(m => messageTypes.Contains(m.MessageType));
     }
 
     public static IObservable<Protocol.Message> Content(this IObservable<Message> observable)

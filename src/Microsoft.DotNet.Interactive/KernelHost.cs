@@ -9,11 +9,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reactive;
 using System.Reactive.Concurrency;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.DotNet.Interactive.Connection;
 using Microsoft.DotNet.Interactive.Events;
 using Pocket;
+
+[assembly: InternalsVisibleTo("Notebook.Kernel")]
 
 namespace Microsoft.DotNet.Interactive;
 
@@ -78,12 +81,7 @@ public class KernelHost : IDisposable
 
     public async Task ConnectAsync()
     {
-        _eventLoop = new EventLoopScheduler(a => new Thread(a)
-        {
-            Name = "KernelHost command dispatcher",
-            IsBackground = true,
-        });
-
+        _eventLoop = new EventLoopScheduler();
         _kernelEventSubscription = _kernel.KernelEvents.Subscribe(e =>
         {
             if (e is ReturnValueProduced { Value: DisplayedValue })

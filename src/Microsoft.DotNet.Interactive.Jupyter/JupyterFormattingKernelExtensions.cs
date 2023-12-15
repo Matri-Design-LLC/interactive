@@ -4,7 +4,7 @@
 using System;
 using Microsoft.DotNet.Interactive.Commands;
 using Microsoft.DotNet.Interactive.CSharp;
-using Microsoft.DotNet.Interactive.FSharp;
+// using Microsoft.DotNet.Interactive.FSharp;
 using Microsoft.DotNet.Interactive.Jupyter.Formatting;
 
 namespace Microsoft.DotNet.Interactive.Jupyter;
@@ -27,19 +27,19 @@ using {typeof(LaTeXString).Namespace};
         return kernel;
     }
 
-    public static FSharpKernel UseMathAndLaTeX(this FSharpKernel kernel)
-    {
-        if (kernel is null)
-        {
-            throw new ArgumentNullException(nameof(kernel));
-        }
-
-        kernel.DeferCommand(
-            new SubmitCode($@"
-#r ""{typeof(LaTeXString).Assembly.Location.Replace("\\", "/")}""
-open {typeof(LaTeXString).Namespace}
-"));
-
-        return kernel;
-    }
+//     public static FSharpKernel UseMathAndLaTeX(this FSharpKernel kernel)
+//     {
+//         if (kernel is null)
+//         {
+//             throw new ArgumentNullException(nameof(kernel));
+//         }
+//
+//         kernel.DeferCommand(
+//             new SubmitCode($@"
+// #r ""{typeof(LaTeXString).Assembly.Location.Replace("\\", "/")}""
+// open {typeof(LaTeXString).Namespace}
+// "));
+//
+//         return kernel;
+//     }
 }
