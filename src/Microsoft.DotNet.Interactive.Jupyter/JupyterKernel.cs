@@ -6,11 +6,8 @@ using Microsoft.DotNet.Interactive.Jupyter.Protocol;
 using System;
 using System.Reactive.Linq;
 using System.Reactive.Threading.Tasks;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
-
-[assembly: InternalsVisibleTo("Notebook.Kernel")]
 
 namespace Microsoft.DotNet.Interactive.Jupyter;
 

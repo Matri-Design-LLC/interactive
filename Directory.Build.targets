@@ -1,8 +1,5 @@
 <Project>
-  <PropertyGroup>
-    <DisableArcade>1</DisableArcade>
-  </PropertyGroup>
-  
+
   <Import Project="Sdk.targets" Sdk="Microsoft.DotNet.Arcade.Sdk" Condition="'$(DisableArcade)' != '1'" />
 
   <!--

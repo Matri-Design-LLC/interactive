@@ -7,7 +7,6 @@ using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -24,8 +23,6 @@ using Microsoft.DotNet.Interactive.Formatting;
 using Microsoft.DotNet.Interactive.Utility;
 using Microsoft.DotNet.Interactive.ValueSharing;
 using CompletionItem = Microsoft.DotNet.Interactive.Events.CompletionItem;
-
-[assembly: InternalsVisibleTo("Notebook.Kernel")]
 
 namespace Microsoft.DotNet.Interactive.CSharp;
 
@@ -70,7 +67,7 @@ public class CSharpKernel :
         //...so we wait for RunAsync to read Directory.GetCurrentDirectory() the first time.
 
         _scriptOptions = ScriptOptions.Default
-            .WithLanguageVersion(LanguageVersion.CSharp11) // LanguageVersion.CSharp12
+            .WithLanguageVersion(LanguageVersion.CSharp12)
             .AddImports(
                 "System",
                 "System.Text",
