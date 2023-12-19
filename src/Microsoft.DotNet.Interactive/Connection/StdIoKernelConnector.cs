@@ -302,7 +302,7 @@ public class StdIoKernelConnector
     {
         if (_process is { HasExited: false })
         {
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || NETSTANDARD2_1
             // TODO: Kill entire process tree.
             _process?.Kill();
 #else

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <NoWarn>$(NoWarn);2003;57</NoWarn> <!-- AssemblyInformationalVersionAttribute contains a non-standard value -->
     <Deterministic Condition="'$(NCrunch)' == '1'">false</Deterministic>
     <LangVersion>preview</LangVersion>
@@ -35,9 +35,9 @@
     <Compile Include="FSharpKernelExtensions.fs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="$(PkgFSharp_Core)\lib\netstandard2.1\FSharp.Core.xml" CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
+  <!-- <ItemGroup> -->
+  <!--   <None Include="$(PkgFSharp_Core)\lib\netstandard2.1\FSharp.Core.xml" CopyToOutputDirectory="PreserveNewest" /> -->
+  <!-- </ItemGroup> -->
 
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.DotNet.Interactive.Formatting\Microsoft.DotNet.Interactive.Formatting.csproj" />
